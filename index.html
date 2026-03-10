@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Just One — Habit Tracker</title>
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --surface: #141414;
+      --border: #222;
+      --text: #e8e8e8;
+      --muted: #888;
+      --accent: #8b5cf6;
+      --accent-dim: rgba(139, 92, 246, 0.12);
+      --success: #34d399;
+      --success-dim: rgba(52, 211, 153, 0.12);
+      --warning: #fbbf24;
+      --warning-dim: rgba(251, 191, 36, 0.12);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: 80px 0 48px;
+    }
+
+    .app-icon {
+      width: 96px;
+      height: 96px;
+      border-radius: 22px;
+      background: linear-gradient(135deg, var(--accent), #6d28d9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 28px;
+      font-size: 44px;
+      box-shadow: 0 8px 32px rgba(139, 92, 246, 0.3);
+    }
+
+    .hero h1 {
+      font-size: 40px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(135deg, var(--accent), #a78bfa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero .tagline {
+      font-size: 18px;
+      color: var(--muted);
+      max-width: 420px;
+      margin: 0 auto 32px;
+    }
+
+    .app-store-badge {
+      display: inline-block;
+      transition: opacity 0.2s;
+    }
+
+    .app-store-badge:hover { opacity: 0.8; }
+
+    .app-store-badge img {
+      height: 52px;
+    }
+
+    /* Heatmap visual */
+    .heatmap-visual {
+      display: flex;
+      gap: 3px;
+      justify-content: center;
+      margin: 40px auto 0;
+      flex-wrap: wrap;
+      max-width: 340px;
+    }
+
+    .heatmap-cell {
+      width: 14px;
+      height: 14px;
+      border-radius: 3px;
+      background: var(--border);
+    }
+
+    .heatmap-cell.l1 { background: rgba(139, 92, 246, 0.2); }
+    .heatmap-cell.l2 { background: rgba(139, 92, 246, 0.4); }
+    .heatmap-cell.l3 { background: rgba(139, 92, 246, 0.65); }
+    .heatmap-cell.l4 { background: var(--accent); }
+
+    /* Features */
+    .features {
+      padding: 64px 0;
+    }
+
+    .features h2 {
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    @media (max-width: 540px) {
+      .feature-grid { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 32px; }
+    }
+
+    .feature-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px;
+    }
+
+    .feature-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      margin-bottom: 14px;
+    }
+
+    .feature-card h3 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .feature-card p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* Support */
+    .support {
+      padding: 48px 0 80px;
+      border-top: 1px solid var(--border);
+    }
+
+    .support h2 {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      text-align: center;
+    }
+
+    .support p {
+      color: var(--muted);
+      text-align: center;
+      font-size: 15px;
+      margin-bottom: 8px;
+    }
+
+    .support a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .support a:hover { text-decoration: underline; }
+
+    /* Privacy link */
+    .footer {
+      padding: 32px 0;
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .footer p {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .footer a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .footer a:hover { color: var(--text); }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="app-icon">1</div>
+      <h1><span>Just One</span></h1>
+      <p class="tagline">A minimalist habit tracker. Start with one habit. Build from there.</p>
+
+      <!-- Heatmap decoration -->
+      <div class="heatmap-visual" id="heatmap"></div>
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+      <h2>Features</h2>
+      <div class="feature-grid">
+
+        <div class="feature-card">
+          <div class="feature-icon" style="background: var(--accent-dim);">
+            <span style="color: var(--accent);">🔥</span>
+          </div>
+          <h3>Streak Tracking</h3>
+          <p>Build weekly streaks and see your consistency grow over time. One missed day doesn't have to end it — use Streak Savers to protect your progress.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon" style="background: var(--success-dim);">
+            <span style="color: var(--success);">📊</span>
+          </div>
+          <h3>Visual Heatmaps</h3>
+          <p>GitHub-style contribution graphs show weeks of history at a glance. Drag across dates for detailed day-by-day breakdowns.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon" style="background: var(--warning-dim);">
+            <span style="color: var(--warning);">🚀</span>
+          </div>
+          <h3>Progressive Journeys</h3>
+          <p>Set a start and goal value, and level up over time. Great for reading, running, meditation — anything you want to build gradually.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon" style="background: rgba(244, 114, 182, 0.12);">
+            <span style="color: #f472b6;">🚫</span>
+          </div>
+          <h3>Break Habits</h3>
+          <p>Track habits you're quitting. Count clean days, log slip-ups, and build streaks of resistance.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon" style="background: rgba(96, 165, 250, 0.12);">
+            <span style="color: #60a5fa;">📱</span>
+          </div>
+          <h3>Home Screen Widgets</h3>
+          <p>Check off habits right from your Home Screen or Lock Screen without opening the app.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon" style="background: rgba(251, 146, 60, 0.12);">
+            <span style="color: #fb923c;">🛡️</span>
+          </div>
+          <h3>Streak Savers</h3>
+          <p>Fill in a missed day so one slip doesn't erase weeks of progress. Available as tokens or unlimited with Pro.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Support -->
+    <section class="support" id="support">
+      <h2>Support</h2>
+      <p>Need help or have feedback? Reach out and we'll get back to you.</p>
+      <p><a href="mailto:ryanelliott10@icloud.com">ryanelliott10@icloud.com</a></p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>&copy; 2026 ZeroSettle &middot; <a href="privacy.html">Privacy Policy</a></p>
+    </footer>
+
+  </div>
+
+  <script>
+    // Generate heatmap cells with random intensity
+    const heatmap = document.getElementById('heatmap');
+    const levels = ['', 'l1', 'l2', 'l3', 'l4'];
+    // Bias toward filled cells for a nice visual
+    const weights = [0.2, 0.15, 0.2, 0.2, 0.25];
+
+    for (let i = 0; i < 98; i++) {
+      const cell = document.createElement('div');
+      cell.className = 'heatmap-cell';
+      const r = Math.random();
+      let cumulative = 0;
+      for (let j = 0; j < weights.length; j++) {
+        cumulative += weights[j];
+        if (r < cumulative) {
+          if (levels[j]) cell.classList.add(levels[j]);
+          break;
+        }
+      }
+      heatmap.appendChild(cell);
+    }
+  </script>
+
+</body>
+</html>
