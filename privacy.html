@@ -3,125 +3,128 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Privacy Policy — Just One</title>
+  <title>Privacy Policy — Pawprints</title>
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <meta name="theme-color" content="#0a0a0a">
+  <meta name="theme-color" content="#fd7f52">
+  <meta name="description" content="Pawprints has no servers of its own. No accounts with us, no analytics, no advertising, and no third-party code in the app.">
   <style>
     :root {
-      --bg: #0a0a0a;
-      --surface: #141414;
-      --border: #222;
-      --text: #e8e8e8;
-      --muted: #888;
-      --accent: #8b5cf6;
+      --coral: #fd7f52;
+      --bg: #fdfaf4;
+      --border: #ece4d6;
+      --text: #1f2a26;
+      --muted: #6d7a73;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #141a19; --border: #2b3633; --text: #ecefe9; --muted: #97a49d; }
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.7;
-      -webkit-font-smoothing: antialiased;
+      background: var(--bg); color: var(--text);
+      line-height: 1.7; -webkit-font-smoothing: antialiased;
     }
 
-    .container {
-      max-width: 640px;
-      margin: 0 auto;
-      padding: 64px 24px 80px;
-    }
+    .container { max-width: 660px; margin: 0 auto; padding: 56px 24px 88px; }
 
-    a { color: var(--accent); text-decoration: none; }
+    a { color: var(--coral); text-decoration: none; }
     a:hover { text-decoration: underline; }
 
-    .back { font-size: 14px; color: var(--muted); display: inline-block; margin-bottom: 32px; }
-    .back:hover { color: var(--text); }
+    .back { font-size: 14px; color: var(--muted); display: inline-block; margin-bottom: 30px; }
+    .back:hover { color: var(--text); text-decoration: none; }
 
-    h1 {
-      font-size: 32px;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      margin-bottom: 8px;
+    h1 { font-size: 33px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 8px; }
+    .updated { font-size: 14px; color: var(--muted); margin-bottom: 30px; }
+
+    .lede {
+      font-size: 17px; color: var(--text);
+      border-left: 3px solid var(--coral);
+      padding-left: 18px; margin-bottom: 36px;
     }
 
-    .updated {
-      font-size: 14px;
-      color: var(--muted);
-      margin-bottom: 40px;
-    }
+    h2 { font-size: 18.5px; font-weight: 650; margin: 34px 0 10px; color: var(--text); }
 
-    h2 {
-      font-size: 18px;
-      font-weight: 600;
-      margin: 32px 0 12px;
-    }
-
-    p, li {
-      font-size: 15px;
-      color: var(--muted);
-      margin-bottom: 12px;
-    }
-
-    ul {
-      padding-left: 20px;
-      margin-bottom: 12px;
-    }
-
-    li { margin-bottom: 6px; }
+    p, li { font-size: 15.5px; color: var(--muted); margin-bottom: 12px; }
+    ul { padding-left: 22px; margin-bottom: 12px; }
+    li { margin-bottom: 7px; }
+    strong { color: var(--text); font-weight: 600; }
   </style>
 </head>
 <body>
   <div class="container">
-    <a href="/" class="back">&larr; Back to Just One</a>
+    <a href="/" class="back">&larr; Back to Pawprints</a>
 
     <h1>Privacy Policy</h1>
-    <p class="updated">Last updated: March 10, 2026</p>
+    <p class="updated">Last updated: 7 August 2026</p>
 
-    <h2>Overview</h2>
-    <p>Just One ("the App") is a habit tracking app built by Ryan Elliott. Your privacy matters. This policy explains what data the App collects and how it is used.</p>
+    <p class="lede">Pawprints has no servers of its own. There is no Pawprints account, no analytics, no advertising, and no third-party code in the app. Your data lives on your device and in your own iCloud account, where I cannot reach it.</p>
 
-    <h2>Data Stored on Your Device</h2>
-    <p>All habit data — names, completion history, streaks, and settings — is stored locally on your device using Apple's SwiftData framework. This data is not transmitted to any external server unless you use features that require it (such as account sign-in or purchasing).</p>
+    <h2>Who this is</h2>
+    <p>Pawprints is an iOS app built by Ryan Elliott. It records your dog's walks and turns them into a map you keep.</p>
 
-    <h2>Account & Authentication</h2>
-    <p>The App uses Sign in with Apple for authentication. When you sign in, Apple provides:</p>
+    <h2>What Pawprints stores</h2>
+    <p>Everything you enter, and nothing you don't:</p>
     <ul>
-      <li>A unique user identifier</li>
-      <li>Your name and email (if you choose to share them)</li>
-    </ul>
-    <p>This information is used solely to identify your account for purchase management and entitlement tracking.</p>
-
-    <h2>Purchases & Billing</h2>
-    <p>The App offers subscriptions and one-time purchases through Apple's App Store (StoreKit) and through ZeroSettle, a third-party payment provider. When you make a purchase:</p>
-    <ul>
-      <li><strong>App Store purchases</strong> are handled entirely by Apple. The App receives transaction confirmation but does not see your payment details.</li>
-      <li><strong>Direct purchases</strong> are processed by Stripe via ZeroSettle. Your payment information is handled by Stripe and is never stored by the App. ZeroSettle receives your user ID to manage entitlements.</li>
+      <li><strong>Your dogs</strong> — names, photos, breed, birthday, weight, notes, and the description, medical notes, behaviour notes and contact details you fill in for emergencies.</li>
+      <li><strong>Your walks</strong> — the GPS route, distance, duration, step counts, photos you take, and any title or note you add.</li>
+      <li><strong>Your map</strong> — which areas you've explored, and anywhere you've marked as somewhere you'll never walk.</li>
+      <li><strong>Care records</strong> — feeding, medication, weight and vet visits you log.</li>
+      <li><strong>Household</strong> — the name and photo of anyone in your family group.</li>
     </ul>
 
-    <h2>Analytics & Tracking</h2>
-    <p>The App does not include any third-party analytics SDKs, advertising frameworks, or tracking pixels. We do not track your behavior, sell your data, or share it with advertisers.</p>
+    <h2>Where it goes</h2>
+    <p>Into your own iCloud account, through Apple's CloudKit, in your <strong>private</strong> database. I have no access to it and no ability to read it. Nothing is stored in a public database, and nothing is sent to any server I control — because there isn't one.</p>
+    <p>If you invite someone into your household, that household's data is shared with them through Apple's own sharing, by invitation link only. It is never publicly discoverable, and you can stop sharing at any time.</p>
+    <p>The area you mark as home stays on the device you marked it on, and is used to hide that area from maps you share.</p>
+
+    <h2>Apple services Pawprints uses</h2>
+    <ul>
+      <li><strong>iCloud / CloudKit</strong> — to sync and back up your atlas across your devices.</li>
+      <li><strong>Sign in with Apple</strong> — to identify you for iCloud sharing. Pawprints never receives your password.</li>
+      <li><strong>WeatherKit</strong> — a walk's location and time are sent to Apple to look up what the weather was during it. Apple's privacy terms govern that lookup.</li>
+      <li><strong>Apple Health</strong> — see below.</li>
+      <li><strong>The App Store</strong> — to sell and restore subscriptions. Payment is handled entirely by Apple; Pawprints never sees your payment details.</li>
+    </ul>
+
+    <h2>Location</h2>
+    <p>Pawprints asks only for <strong>"While Using the App"</strong> location — never "Always". It records your position while a walk is being recorded, to draw the route and fill in the map.</p>
+    <p>It does not monitor regions, significant location changes, or visits. It has no ability to track you when you are not recording a walk.</p>
+
+    <h2>Health data</h2>
+    <p>With your permission, Pawprints reads walks, runs, hikes and rides recorded by other apps so they aren't missing from your atlas, and can save your Pawprints walks back to Apple Health as workouts.</p>
+    <p>Health data is <strong>never</strong> used for advertising, never sold, and never shared with any third party. When you import a workout, the resulting walk record — its distance, duration and route — is stored in Pawprints and syncs with the rest of your atlas through your own iCloud account.</p>
+
+    <h2>Photos and camera</h2>
+    <p>Photos you take in Pawprints are attached to the walk and, if you allow it, also saved to your photo library. Pawprints does not read your existing photo library.</p>
 
     <h2>Notifications</h2>
-    <p>If you enable daily reminders, notification scheduling is handled entirely on-device. No notification data is sent externally.</p>
+    <p>Reminders are scheduled on your device. No notification content is sent anywhere.</p>
 
-    <h2>Data Sharing</h2>
-    <p>The App does not share your personal data with third parties except as described above (Apple for authentication, Stripe/ZeroSettle for payment processing).</p>
+    <h2>What Pawprints does not do</h2>
+    <ul>
+      <li>No analytics, telemetry or crash-reporting services.</li>
+      <li>No advertising, ad networks or attribution SDKs.</li>
+      <li>No third-party SDKs of any kind — the app contains no code but mine and Apple's.</li>
+      <li>No selling, renting or sharing of your data. There is no one to sell it to.</li>
+      <li>No tracking across other apps or websites.</li>
+    </ul>
 
-    <h2>Data Deletion</h2>
-    <p>You can delete all your data at any time by deleting the App from your device. All locally stored habit data will be permanently removed.</p>
+    <h2>Deleting your data</h2>
+    <p>Deleting the app removes everything stored on the device. To remove what's in iCloud, use Settings › your name › iCloud › Manage Account Storage on your iPhone — or write to me and I'll walk you through it.</p>
 
-    <h2>Children's Privacy</h2>
-    <p>The App is not directed at children under 13. We do not knowingly collect personal information from children.</p>
+    <h2>Children's privacy</h2>
+    <p>Pawprints is not directed at children under 13 and does not knowingly collect their information.</p>
 
-    <h2>Changes to This Policy</h2>
-    <p>We may update this policy from time to time. Changes will be posted on this page with an updated date.</p>
+    <h2>Changes to this policy</h2>
+    <p>If this policy changes, the date at the top changes with it, and material changes will be noted in the app's release notes.</p>
 
     <h2>Contact</h2>
-    <p>If you have questions about this policy, contact us at <a href="mailto:ryan.elliott31@gmail.com">ryan.elliott31@gmail.com</a>.</p>
+    <p>Questions about this policy: <a href="mailto:ryan.elliott31@gmail.com">ryan.elliott31@gmail.com</a>.</p>
   </div>
 </body>
 </html>
