@@ -60,7 +60,7 @@
     <a href="/" class="back">&larr; Back to Pawprints</a>
 
     <h1>Privacy Policy</h1>
-    <p class="updated">Last updated: 16 September 2026</p>
+    <p class="updated">Last updated: 10 October 2026</p>
 
     <p class="lede">Your walks and dog-care records are stored on your device and, where enabled, in your own iCloud account. Pawprints uses RevenueCat and ZeroSettle for subscription analytics, and does not sell your data or use it for advertising.</p>
 
@@ -77,27 +77,43 @@
     </ul>
 
     <h2>Device storage and iCloud sharing</h2>
-    <p>Pawprints uses Apple's CloudKit to sync eligible app records through your private iCloud database. Household records you choose to share are available to invited participants through Apple's sharing services. Current versions may also sync imported Apple Health records, derived adventures and personal step counts. See the Apple Health section below for details and an upcoming storage change.</p>
+    <p>Pawprints uses Apple's CloudKit to sync eligible app records through your private iCloud database. Household records you choose to share are available to invited participants through Apple's sharing services.</p>
     <p>The home privacy area you mark stays on that device and is used to hide that area from maps you share. When you export or share content yourself, your chosen recipients and services receive that content.</p>
+
+    <h2>Top Dogs leaderboards (optional)</h2>
+    <p>If you put a dog on the Top Dogs boards, Pawprints sends our leaderboard server, hosted by Render in the United States, the name and title you choose for that dog. Visits are published when a walk is saved: for each walk that enters a park, Pawprints sends the park, the date, the minutes inside the park, and which small areas (about 30 m squares) of the park the walk crossed.</p>
+    <p>Other Pawprints users can see your dog's chosen name and title, which parks it visits, how many days it visited each park and how many minutes, which days of the week it visits, and the areas of a park it leads and the crowns it holds. They never see photos, routes, exact times, your name or your family.</p>
+    <p>You can hide any park, change the name, leave the boards, or delete the board data in Settings.</p>
+
+    <h2>Account identifier</h2>
+    <p>To keep your boards across your devices without a login, the server issues a random secret that Pawprints stores in your private iCloud and Keychain. The server stores only a one-way hash of it. This household record is created when the app is first used with a dog and an iCloud account, even if you never join Top Dogs.</p>
+
+    <h2>Reports and blocks</h2>
+    <p>If you report a dog, the report and any note you write are stored, and the note is emailed to the developer through our email provider, Resend, so it can be reviewed. Reports are kept for moderation after either party deletes their data. Blocks are stored with your household until you unblock or delete your data.</p>
+
+    <h2>Park data and OpenStreetMap</h2>
+    <p>Park outlines come from OpenStreetMap contributors under the Open Database License; see <a href="/park-data.html">Pawprints park data</a>. To show parks, Pawprints asks the server for parks in the map area you are viewing. These requests do not include an account identifier.</p>
+
+    <h2>Hosting</h2>
+    <p>The leaderboard server and its database are hosted by Render in the United States. Render and our hosting providers keep backups for a limited period.</p>
 
     <h2>Subscriptions and service providers</h2>
     <p>Apple handles purchases and payment details through the App Store. Pawprints uses Apple's StoreKit to determine subscription access. We do not receive your card number or Apple Account password, and the app does not offer a third-party web checkout.</p>
     <p><strong>RevenueCat and ZeroSettle</strong> receive subscription and transaction information, including product identifiers, purchase history, trial, renewal, cancellation, refund and entitlement status. We use these services to understand subscription revenue and customer history and to validate subscription transactions.</p>
-    <p>To associate purchases across your devices, Pawprints sends these providers an opaque identifier supplied by CloudKit for your iCloud account. RevenueCat may initially use its own anonymous identifier before that account identifier is available. These identifiers can link purchase records to the same customer; they are not your email address or advertising identifier. Pawprints does not supply these providers with your name, email, dog profiles, photos, walk routes, care records or Apple Health data.</p>
+    <p>To associate purchases across your devices, Pawprints sends these providers an opaque identifier supplied by CloudKit for your iCloud account (the iCloud user record name, which is used as the app user id there). RevenueCat may initially use its own anonymous identifier before that account identifier is available. These identifiers can link purchase records to the same customer; they are not your email address or advertising identifier. Pawprints does not supply these providers with your name, email, dog profiles, photos, walk routes, care records or Apple Health data.</p>
     <p>Requests also include technical context needed by the services, such as SDK or app version, platform and App Store storefront. Like other online services, the providers receive your IP address and may retain operational and security logs. Subscription records and analytics are available to us through their dashboards.</p>
     <p>See the <a href="https://www.revenuecat.com/privacy">RevenueCat privacy policy</a> and <a href="https://zerosettle.io/legal/privacy">ZeroSettle privacy policy</a> for their processing, retention and international-transfer practices.</p>
 
     <h2>Apple services</h2>
-    <p>Pawprints uses iCloud / CloudKit for eligible record sync and sharing, MapKit for maps, WeatherKit for weather, Apple Health for optional workout access, and the App Store for purchases. Weather lookups send the relevant location and time to Apple. These Apple services are also subject to <a href="https://www.apple.com/legal/privacy/">Apple's privacy policy</a>.</p>
+    <p>Pawprints uses iCloud / CloudKit for eligible record sync and sharing, MapKit for maps, Apple Health for optional workout access, and the App Store for purchases. These Apple services are also subject to <a href="https://www.apple.com/legal/privacy/">Apple's privacy policy</a>.</p>
 
     <h2>Location</h2>
     <p>Pawprints requests <strong>While Using the App</strong> location permission to show your location and record walk routes. During an active recording, location updates can continue while the app is in the background or the screen is locked. Pawprints does not request Always location permission.</p>
 
     <h2>Apple Health</h2>
-    <p>With your permission, Pawprints can read walking, running, hiking and cycling workouts and their routes, and save walks you record in Pawprints to Apple Health. You can manage or revoke access in the Health app or system settings.</p>
-    <p><strong>Current versions:</strong> imported workouts, their routes and derived adventure records, and personal step counts may sync through your iCloud account. Some derived adventure records may also be available to household participants. Apple Health data is not sent to RevenueCat or ZeroSettle, used for advertising or subscription analytics, or sold. Apple's handling of data in the Health app is governed by your Apple Health settings.</p>
-    <p><strong>Upcoming update — not yet released:</strong> we are preparing an update that stores new imported workouts, their routes and derived adventures, and personal step counts on the device, excluded from iCloud sync and device backup. These records will not be included in household sharing. Until that update is available and installed, the current-version behavior above applies.</p>
-    <p><strong>Existing cloud copies:</strong> copying records into device-only storage does not automatically erase copies already in iCloud or held by household members. Cleanup of those records is a separate step. We are not claiming those copies have been removed; contact us for assistance.</p>
+    <p>With your permission, Pawprints reads walking, running, hiking and cycling workouts and their routes from Apple Health, and saves walks you record in Pawprints to Apple Health. You can manage or revoke access in the Health app or system settings.</p>
+    <p>Workouts, routes and step counts imported from Apple Health are stored only on this device, are excluded from iCloud sync and device backup, and are not shared with your household or any server. They are never sent to RevenueCat or ZeroSettle, used for advertising or sold.</p>
+    <p>If you used an earlier version of Pawprints, copies of imported Health records may remain in your private iCloud. You can erase them in Settings, Your data, Delete account and data.</p>
 
     <h2>Photos, camera and notifications</h2>
     <p>You can take photos or select individual photos using Apple's photo picker. Pawprints receives the photos you choose; it does not need unrestricted access to your photo library. If you grant permission, photos taken in the app can also be saved to your library. Photos attached to eligible app records may sync or be shared with your household.</p>
@@ -108,6 +124,7 @@
 
     <h2>Retention, deletion and your choices</h2>
     <p>You can manage records within the app and control permissions in system settings. Removing the app removes its local data but does not automatically remove records already stored in iCloud, Apple Health, or subscription providers. Manage iCloud storage through Settings › your name › iCloud, and Apple Health records in the Health app. Other household members or recipients may retain copies of content you shared.</p>
+    <p>Leaderboard data is kept while your dog is on the boards. It is deleted when you delete the board data or your account in Settings, Your data, Delete account and data, which also removes your Pawprints data from this device and iCloud and deletes your household on the leaderboard server. Reports that name a dog, and anonymized reports a person filed, are kept for moderation. Hosting providers keep backups for a limited period.</p>
     <p>For access, correction or deletion requests concerning subscription-provider records, contact us below so we can coordinate with the providers and verify the relevant records. Retention depends on the purpose of processing and any legal, accounting, fraud-prevention or dispute-resolution requirements. Deleting app data does not cancel an App Store subscription; manage subscriptions through your Apple Account settings.</p>
     <p>If you email support, we receive your email address and the information you choose to send, and use it to respond to your request. Avoid including sensitive information that is not needed for support.</p>
 
@@ -118,7 +135,7 @@
     <p>If this policy changes, the date at the top changes with it, and material changes will be noted in the app's release notes.</p>
 
     <h2>Contact</h2>
-    <p>Questions about this policy: <a href="mailto:ryan.elliott31@gmail.com">ryan.elliott31@gmail.com</a>.</p>
+    <p>Questions about this policy: <a href="mailto:ryan@zerosettle.io">ryan@zerosettle.io</a>.</p>
   </div>
 </body>
 </html>
