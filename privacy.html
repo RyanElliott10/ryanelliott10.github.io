@@ -9,7 +9,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <meta name="theme-color" content="#fd7f52">
-  <meta name="description" content="How Pawprints handles your walks, Apple Health data, iCloud sharing, and subscription analytics.">
+  <meta name="description" content="How Pawprints handles your walks, Apple Health data, iCloud sharing, sharing walks with friends, and subscription analytics.">
   <style>
     :root {
       --coral: #fd7f52;
@@ -60,9 +60,9 @@
     <a href="/" class="back">&larr; Back to Pawprints</a>
 
     <h1>Privacy Policy</h1>
-    <p class="updated">Last updated: 22 October 2026</p>
+    <p class="updated">Last updated: 11 November 2026</p>
 
-    <p class="lede">Your walks and dog-care records are stored on your device and, where enabled, in your own iCloud account. Pawprints uses RevenueCat and ZeroSettle for subscription analytics, and does not sell your data or use it for advertising.</p>
+    <p class="lede">Your walks and dog-care records are stored on your device and, where enabled, in your own iCloud account. If you choose to sign in and share walks with friends, those walks are also kept on our server. Pawprints uses RevenueCat and ZeroSettle for subscription analytics, and does not sell your data or use it for advertising.</p>
 
     <h2>Who this is</h2>
     <p>Pawprints is an iOS app built by Ryan Elliott. It records your dog's walks, maps your adventures, and helps you manage everyday care.</p>
@@ -74,6 +74,7 @@
       <li><strong>Your map</strong> — explored areas and places you mark as somewhere you will not walk.</li>
       <li><strong>Care records</strong> — feeding, medication, weight and vet visits you log.</li>
       <li><strong>Your household</strong> — names and photos of family-group members.</li>
+      <li><strong>Sharing, if you turn it on</strong> — your sign in with Apple, and the walks, photos, comments and connections described under Sharing walks with friends.</li>
     </ul>
 
     <h2>Device storage and iCloud sharing</h2>
@@ -88,14 +89,26 @@
     <h2>Account identifier</h2>
     <p>To keep your boards across your devices without a login, the server issues a random secret that Pawprints stores in your private iCloud and Keychain. The server stores only a one-way hash of it. This household record is created when the app is first used with a dog and an iCloud account, even if you never join Top Dogs.</p>
 
+    <h2>Sharing walks with friends (optional)</h2>
+    <p>Sharing is off until you sign in with Apple in the sharing sheet. Without signing in, nothing described in this section leaves your device.</p>
+    <p><strong>Sign in with Apple.</strong> We verify the token Apple gives the app and keep only a one-way hash of your Apple identifier, never the identifier itself. The app asks Apple for your name only, not your email address. If you share it, we keep the first word of your given name, which you can change, and it is shown to friends as the person behind your dog. We also keep the version of these terms you accepted, and a record of each signed-in device (its model, such as iPhone, and when it was last used). To revoke your Apple sign in when you delete your account, we keep a refresh token that Apple issues, stored encrypted and used for nothing else. Your sign in is linked to the same household record as your Top Dogs boards, so the two share one account on our server.</p>
+    <p><strong>Your dogs.</strong> For each dog you share, the server stores its name, an optional breed and birth year, and a small copy of its profile photo (256 pixels, with its location and other metadata removed). Friends you approve see these. Anyone who opens one of your live invite links sees the dog's name and that photo before they sign in, until you reset the link.</p>
+    <p><strong>Your walks.</strong> Once you are signed in, every saved walk of a dog you share is copied to our server, so that a new phone can recover it and so that friends can see it. That copy has two parts. Your own copy holds the full route, the areas explored, parks, the place name, the exact distance, duration and times. Only the people who share that dog with you can read it, which means your household, members of your iCloud family share, and anyone an existing guardian of that dog approved. Friends never see it, and it is kept even for walks you set to Only you.</p>
+    <p>If a walk is set to Followers and you have set a home area, friends also get a second copy. It leaves out at least 120 metres at each end of the route, plus a few more that differ on every walk, and a circle of roughly a quarter mile or more around your home that is also different on every walk. Any park, place name or photo inside those areas is left out. Distance is rounded to the nearest 100 metres and duration to the nearest minute, and the start time stays exact. The title and note you write are shown with the walk. Without a home area set, a walk is not shared with friends. The home area itself stays on your device and is never sent.</p>
+    <p><strong>Walk photos.</strong> Walks set to Followers can carry up to four photos. Photos are resized on your phone, with their location and camera data removed, and again on the server, which also makes a small preview. A photo is left out when it was taken in the hidden start or finish, inside the home circle, or has no capture time. Walks set to Only you send no photos.</p>
+    <p><strong>Who sees what.</strong> Friends are dogs you have approved and who have approved you; there is no search, and people connect through an invite link or code that belongs to a dog. Approved friends can see the followers' copy of a walk, its photos, the dog's name, breed and birth year, the name you chose to show, and the treats and comments on the walk. You can switch a walk to Only you at any time, which removes its followers' copy and its photos from the server, and you can delete a walk, remove a friend, reset an invite link, or block a dog.</p>
+    <p><strong>Treats and comments.</strong> A treat or comment is stored with the walk, the dog it was given as and your household. People who can see the walk see them, and they are removed if the walk, the comment or your account is deleted. Comments and the text you write for walks, dogs and display names pass through an automatic filter on our server.</p>
+    <p><strong>Family members.</strong> If you share your dogs through an iCloud family share, the owner's phone tells our server who is in the share, so that members can see and post walks of shared dogs and so that someone who leaves is taken off. A member's own walks of a shared dog are posted only after that person says yes on their own phone, and they can take that back. We store each person's answer, but no names, with the family record. Walks you record together with another phone can be combined into one outing, and the most private setting among the recordings applies.</p>
+    <p><strong>Where it is kept.</strong> This data is stored in the same server and database as Top Dogs, hosted by Render in the United States, and described under Hosting. Photos are kept in the database.</p>
+
     <h2>Reports and blocks</h2>
-    <p>If you report a dog, the report and any note you write are stored, and the note is emailed to the developer through our email provider, Resend, so it can be reviewed. Reports are kept for moderation after either party deletes their data. Blocks are stored with your household until you unblock or delete your data.</p>
+    <p>You can report a dog, a walk, a photo or a comment, and block a dog. If you report something, the report, your reason and any note you write are stored, and the note is emailed to the developer through our email provider, Resend, so it can be reviewed. The same photo or comment reported by two households is hidden automatically while it is reviewed. We may hide content, remove names that break the rules, or remove an account. Reports are kept for moderation after either party deletes their data, with the reporter's identity removed once the reporter deletes their account. Blocks are stored with your household until you unblock or delete your data. A blocked dog is not told, and you and its household stop seeing each other's walks.</p>
 
     <h2>Park data and OpenStreetMap</h2>
     <p>Park outlines come from OpenStreetMap contributors under the Open Database License; see <a href="/park-data.html">Pawprints park data</a>. To show parks, Pawprints asks the server for parks in the map area you are viewing. These requests do not include an account identifier.</p>
 
     <h2>Hosting</h2>
-    <p>The leaderboard server and its database are hosted by Render in the United States. Render and our hosting providers keep backups for a limited period.</p>
+    <p>The leaderboard and sharing server and its database are hosted by Render in the United States. Render and our hosting providers keep backups and operational logs for a limited period. The server uses your device's IP address to limit how often one connection can make requests.</p>
 
     <h2>Subscriptions and service providers</h2>
     <p>Apple handles purchases and payment details through the App Store. Pawprints uses Apple's StoreKit to determine subscription access. We do not receive your card number or Apple Account password, and the app does not offer a third-party web checkout.</p>
@@ -112,11 +125,11 @@
 
     <h2>Apple Health</h2>
     <p>With your permission, Pawprints reads walking, running, hiking and cycling workouts and their routes from Apple Health, and saves walks you record in Pawprints to Apple Health. You can manage or revoke access in the Health app or system settings.</p>
-    <p>Workouts, routes and step counts imported from Apple Health are stored only on this device, are excluded from iCloud sync and device backup, and are not shared with your household or any server. They are never sent to RevenueCat or ZeroSettle, used for advertising or sold.</p>
+    <p>Workouts, routes and step counts imported from Apple Health are stored only on this device, are excluded from iCloud sync and device backup, and are not shared with your household, with friends or with any server, so a walk that came from Apple Health is never posted when you share walks with friends. They are never sent to RevenueCat or ZeroSettle, used for advertising or sold.</p>
     <p>If you used an earlier version of Pawprints, copies of imported Health records may remain in your private iCloud. You can erase them in Settings, Your data, Delete account and data.</p>
 
     <h2>Photos, camera and notifications</h2>
-    <p>You can take photos or select individual photos using Apple's photo picker. Pawprints receives the photos you choose; it does not need unrestricted access to your photo library. If you grant permission, photos taken in the app can also be saved to your library. Photos attached to eligible app records may sync or be shared with your household. A photo you choose to show on the Top Dogs boards is visible to other Pawprints users, as described above.</p>
+    <p>You can take photos or select individual photos using Apple's photo picker. Pawprints receives the photos you choose; it does not need unrestricted access to your photo library. If you grant permission, photos taken in the app can also be saved to your library. Photos attached to eligible app records may sync or be shared with your household. A photo you choose to show on the Top Dogs boards is visible to other Pawprints users, as described above. Photos on walks you share with friends, and a dog's sharing profile photo, are copied to our server and are visible to the friends you have approved, as described under Sharing walks with friends. Pawprints does not read your contacts; invites are links and codes.</p>
     <p>Care reminders are scheduled locally on your device.</p>
 
     <h2>Advertising and tracking</h2>
@@ -125,6 +138,7 @@
     <h2>Retention, deletion and your choices</h2>
     <p>You can manage records within the app and control permissions in system settings. Removing the app removes its local data but does not automatically remove records already stored in iCloud, Apple Health, or subscription providers. Manage iCloud storage through Settings › your name › iCloud, and Apple Health records in the Health app. Other household members or recipients may retain copies of content you shared.</p>
     <p>Leaderboard data is kept while your dog is on the boards. A board photo is deleted from the server when you remove it or take the dog off the boards. It is deleted when you delete the board data or your account in Settings, Your data, Delete account and data, which also removes your Pawprints data from this device and iCloud and deletes your household on the leaderboard server. Reports that name a dog, and anonymized reports a person filed, are kept for moderation. Hosting providers keep backups for a limited period.</p>
+    <p>Walks, photos, comments and connections you share with friends are kept until you remove them. Deleting a walk deletes its route, photos, treats and comments from the server, and the server keeps only the walk's id and the dogs it covered so another phone cannot post it again. Signing out of sharing ends that device's session and leaves what you already shared with your friends. Delete account and data in Settings, Your data also deletes your sharing account, its sessions, your comments and treats, your invites and requests, and each dog that no one else still guards together with its walks, photos and followers, and asks Apple to revoke the Sign in with Apple link to Pawprints. A walk of a dog that someone else in your family still guards stays with them. Deleting the app on its own does not delete anything on the server.</p>
     <p>For access, correction or deletion requests concerning subscription-provider records, contact us below so we can coordinate with the providers and verify the relevant records. Retention depends on the purpose of processing and any legal, accounting, fraud-prevention or dispute-resolution requirements. Deleting app data does not cancel an App Store subscription; manage subscriptions through your Apple Account settings.</p>
     <p>If you email support, we receive your email address and the information you choose to send, and use it to respond to your request. Avoid including sensitive information that is not needed for support.</p>
 
